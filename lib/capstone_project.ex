@@ -3,16 +3,9 @@ defmodule CapstoneProject do
   Documentation for `CapstoneProject`.
   """
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> CapstoneProject.hello()
-      'Hello world'
-
-  """
-  def hello do
-    'Hello world'
+  def words_count(file_name \\ "files/words.txt") do
+    File.stream!(file_name)
+      |> Stream.scan(0, fn string, acc -> acc + (String.trim(string) |> String.split(~r/\s+/) |> length()) end)
+      |> Enum.at(-1)
   end
 end
