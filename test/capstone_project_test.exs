@@ -3,6 +3,6 @@ defmodule CapstoneProjectTest do
   doctest CapstoneProject
 
   test "greets the world" do
-    assert CapstoneProject.words_count() == 3424513
+    assert CapstoneProject.words_count() == 3424512
   end
 end
