@@ -11,5 +11,21 @@ File.read!(file_name) |> String.split(~r/\s+/) |> length()
 ## Шаг 2
 
 Переделал на stream и конечный reduce
+```elixir
+File.stream!(file_name)
+  |> Stream.map(&String.trim(&1) |> String.split(~r/\s+/) |> length())
+  |> Enum.reduce(0, fn x, acc -> x + acc end)
+```
 
 Стало на много быстрее, теперь всего 3 секунды!!!
+
+## Шаг 3
+
+Попробовал воспользоваться функцией scan в которой инкрементально вычисляю сумму слов, и потом просто беру последний элемент
+```elixir
+File.stream!(file_name)
+  |> Stream.scan(0, fn string, acc -> acc + (String.trim(string) |> String.split(~r/\s+/) |> length()) end)
+  |> Enum.at(-1)
+```
+
+Стало работать на 0.2 секунды медленнее... Интересно почмеу? Где происходит деградация производительности по сравнению с первым вариантом?
