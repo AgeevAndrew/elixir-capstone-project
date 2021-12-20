@@ -35,3 +35,25 @@ done (passed successfully)
 ```
 
 Вроде бы все сразу хорошо.
+
+## Шаг 3
+
+Установил `credo` воспользовавшисть [инсттрукцией](https://github.com/rrrene/credo)
+
+Запустил и сразу получил предложение по рефакторингу. Круто!
+```shell
+$ mix credo
+  Refactoring opportunities                                                                                                                                                 
+┃ 
+┃ [F] → Cond statements should contain at least two conditions besides `true`, consider using `if` instead.
+┃       lib/capstone_project.ex:83:5 #(CapstoneProject.reduce)
+
+Please report incorrect results: https://github.com/rrrene/credo/issues
+
+Analysis took 0.00 seconds (0.00s to load, 0.00s running 52 checks on 3 files)
+10 mods/funs, found 1 refactoring opportunity.
+
+Showing priority issues: ↑ ↗ →  (use `mix credo explain` to explain issues, `mix credo --help` for options).
+```
+
+Отрефакторил, воспользовавшись предложением, все прошло без проблем.

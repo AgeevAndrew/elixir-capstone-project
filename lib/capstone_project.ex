@@ -80,9 +80,7 @@ defmodule CapstoneProject do
   def reduce(a) do
     {nom, den} = a
     nod = Integer.gcd(nom, den)
-    cond do
-      den < 0 -> {-round(nom / nod), Kernel.abs(round(den / nod))}
-      true -> {round(nom / nod), round(den / nod)}
+    if(den < 0, do: {-round(nom / nod), Kernel.abs(round(den / nod))}, else: {round(nom / nod), round(den / nod)})
     end
   end
 end
