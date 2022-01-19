@@ -38,7 +38,7 @@ done (passed successfully)
 
 ## Шаг 3
 
-Установил `credo` воспользовавшисть [инсттрукцией](https://github.com/rrrene/credo)
+Установил `credo` воспользовавшисть [инструкцией](https://github.com/rrrene/credo)
 
 Запустил и сразу получил предложение по рефакторингу. Круто!
 ```shell
@@ -57,3 +57,15 @@ Showing priority issues: ↑ ↗ →  (use `mix credo explain` to explain issues
 ```
 
 Отрефакторил, воспользовавшись предложением, все прошло без проблем.
+
+## Шаг 4
+
+Написал тесты.
+
+```shell
+$ mix test
+....................................
+
+Finished in 0.09 seconds (0.00s async, 0.09s sync)
+36 tests, 0 failures
+```

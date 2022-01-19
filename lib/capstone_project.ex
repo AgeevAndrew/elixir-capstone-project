@@ -81,6 +81,5 @@ defmodule CapstoneProject do
     {nom, den} = a
     nod = Integer.gcd(nom, den)
     if(den < 0, do: {-round(nom / nod), Kernel.abs(round(den / nod))}, else: {round(nom / nod), round(den / nod)})
-    end
   end
 end
